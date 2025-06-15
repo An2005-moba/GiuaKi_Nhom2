@@ -1,0 +1,266 @@
+body{
+    background-color: #d5d5d5;
+    font-family: system-ui;
+}
+
+.container{    
+    background-color: #e9e7ea;
+    width: 1000px;
+    max-width: 100%;
+    margin: auto;
+    padding: 50px;
+    box-shadow: 0 10px 50px #858585; 
+    display: grid;
+    grid-template-columns: 35% 60%;
+    column-gap: 5%;
+    row-gap: 30px;
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+.container > div {
+    opacity: 0; 
+}
+
+.avatar {
+    animation: fadeInSlideUp 0.7s ease-out forwards;
+    animation-delay: 0.2s; 
+}
+
+.name {
+    animation: fadeInSlideUp 0.7s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+.info {
+    animation: fadeInSlideUp 0.7s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+.intro {
+    animation: fadeInSlideUp 0.7s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+.education {
+    animation: fadeInSlideUp 0.7s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.exp {
+    animation: fadeInSlideUp 0.7s ease-out forwards;
+    animation-delay: 1.2s;
+}
+
+.skills {
+    animation: fadeInSlideUp 0.7s ease-out forwards;
+    animation-delay: 1.4s;
+}
+
+.project {
+    animation: fadeInSlideUp 0.7s ease-out forwards;
+    animation-delay: 1.6s;
+}
+
+.exp .item, .project .item {
+    opacity: 0; 
+    animation: fadeInSlideUp 0.6s ease-out forwards; 
+}
+
+.exp .item:nth-child(1) { animation-delay: 1.4s; } 
+.exp .item:nth-child(2) { animation-delay: 1.6s; }
+
+.project .item:nth-child(1) { animation-delay: 1.8s; } 
+
+@keyframes drawLine {
+    from { height: 0; }
+    to { height: 100%; }
+}
+
+.name, .intro, .exp, .project {
+    border-left: none; 
+    position: relative; 
+}
+
+.name::before, .intro::before, .exp::before, .project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 1px; 
+    height: 0; 
+    background-color: #000;
+    animation: drawLine 0.5s ease-out forwards; 
+}
+
+.name::before { animation-delay: 0.5s; } 
+.intro::before { animation-delay: 0.9s; } 
+.exp::before { animation-delay: 1.3s; }
+.project::before { animation-delay: 1.9s; }
+
+.avatar img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.avatar{
+    display: flex;
+    justify-content: end;
+}
+
+.avatar img:hover {
+    transform: scale(1.05); 
+}
+
+.name{
+    padding-left: 30px;
+}
+
+.name h1{
+    font-weight: 300;
+    font-size: xxx-large;
+    margin: 0 0 5px;
+}
+
+.name .specialize{
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.name .contact{
+    padding: 0;
+    list-style: none;
+}
+
+.name .contact span{
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: small;
+    margin-right: 20px;
+}
+
+.name .contact li{
+    padding: 5px 0;
+    transform: translate(-40px);
+    background-color: #e9e7ea;
+}
+
+.info ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: right;
+    line-height: 30px;
+}
+
+.intro{
+    padding-left: 30px;
+    text-align: justify;
+}
+
+h2{
+    padding: 0;
+    margin-top: 0;
+}
+
+.education{
+    text-align: right;
+}
+
+.education ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: right;
+    line-height: 30px;
+}
+
+.exp{
+    padding-left: 30px;
+    text-align: justify;
+}
+
+.exp h4{
+    margin: 20px 0 10px;
+}
+
+.exp .item{
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+}
+
+.exp .item::before{
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background-color: #000;
+    content: '';
+    border-radius: 50%;
+    left: -37px;
+}
+
+.exp .item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+}
+
+
+.skills{
+    text-align: right;
+}
+
+.skills ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: right;
+    line-height: 30px;
+}
+
+.project{
+    padding-left: 30px;
+    text-align: justify;
+}
+
+.project .location{
+    font-weight: 500;
+    padding: 10px 0;
+}
+
+.project .item{
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project .item::before{
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background-color: #000;
+    content: '';
+    border-radius: 50%;
+    left: -37px;
+}
+
+.project .item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+}

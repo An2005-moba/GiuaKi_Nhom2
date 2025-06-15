@@ -1,0 +1,497 @@
+
+/* CÀI ĐẶT CHUNG & BIẾN MÀU SẮC */
+
+:root {
+    
+    --primary-color: #f39c12; /* Màu vàng cam chủ đạo */
+    --dark-bg: #2c3e50;       /* Nền tối cột trái */
+    --light-bg: #ffffff;      /* Nền sáng cột phải */
+    --dark-text: #34495e;      /* Chữ màu tối trên nền sáng */
+    --light-text: #ecf0f1;     /* Chữ màu sáng trên nền tối */
+    --grey-text: #bdc3c7;      /* Chữ màu xám cho các chi tiết phụ */
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #e0e0e0; /* Màu nền xám bên ngoài CV */
+    margin: 0;
+    padding: 0;
+}
+
+/* BỐ CỤC CHÍNH CỦA CV */
+
+.resume-container {
+    display: flex; /* Sử dụng Flexbox để tạo layout 2 cột */
+    max-width: 1000px;
+    margin: 50px auto; /* Căn giữa CV và tạo khoảng cách trên dưới */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Đổ bóng cho CV */
+    background-color: var(--light-bg);
+}
+
+/* ĐỊNH DẠNG CỘT TRÁI */
+
+.left-column {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    width: 35%;
+    padding: 40px;
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
+}
+
+.left-column h2 {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--light-text);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- Ảnh đại diện --- */
+.profile-section {
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Biến ảnh thành hình tròn */
+    border: 5px solid var(--primary-color);
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+}
+
+/* --- Các mục thông tin chung trong cột trái --- */
+.contact-section ul,
+.references-section ul,
+.language-section ul,
+.certificate-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-section li,
+.references-section li,
+.language-section li,
+.certificate-section li {
+    margin-bottom: 15px;
+}
+
+/* --- Mục Liên hệ --- */
+.contact-section li {
+    display: flex;
+    align-items: center;
+}
+
+.contact-section i {
+    color: var(--primary-color);
+    width: 25px; /* Cố định chiều rộng để các icon thẳng hàng */
+    font-size: 1.1em;
+    margin-right: 10px;
+}
+
+/* --- Mục Sở thích --- */
+.references-section li {
+    display: flex;
+    align-items: center;
+    color: var(--grey-text);
+    font-size: 0.9em;
+}
+
+.references-section li i {
+    color: var(--primary-color);
+    width: 25px;
+    font-size: 1.1em;
+    margin-right: 10px;
+    text-align: center;
+}
+
+/* --- Mục Ngôn ngữ (Thanh tiến trình) --- */
+.language-name{
+    display: block;
+    color: var(--light-text);
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.language-bar{
+    background-color: rgba(255, 255, 255, 0.2); /* Nền mờ cho thanh */
+    border-radius: 5px;
+    height: 8px;
+    width: 100%;
+}
+
+.language-level{
+    background-color: var(--primary-color);
+    height: 100%;
+    border-radius: 5px;
+}
+/* --- CSS cho mục Chứng chỉ (cập nhật) --- */
+.certificate-section {
+    margin-top: 30px;
+}
+
+.certificate-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Cập nhật để icon và chữ nằm trên cùng một hàng */
+.certificate-section li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: var(--light-text); /* Cho đồng bộ màu chữ */
+}
+
+/* Định dạng cho icon */
+.certificate-section li i {
+    color: var(--primary-color);
+    width: 25px;
+    font-size: 1.1em;
+    margin-right: 10px;
+    text-align: center;
+}
+
+/* ĐỊNH DẠNG CỘT PHẢI */
+
+.right-column {
+    width: 65%;
+    padding: 40px;
+    position: relative; /* Quan trọng để định vị cho đường timeline */
+    box-sizing: border-box;
+}
+
+/* --- Đường Timeline Dọc --- */
+/* Kỹ thuật dùng pseudo-element '::before' để vẽ một đường thẳng dọc.
+Nó được định vị tuyệt đối so với '.right-column'. */
+.right-column::before {
+    content: '';
+    position: absolute;
+    top: 150px;
+    left: 40px;
+    width: 2px;
+    height: calc(100% - 200px);
+    background-color: #e0e0e0;
+}
+
+/* --- Header Chính (Tên, Chức danh) --- */
+.main-header {
+    margin-bottom: 40px;
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: var(--dark-text);
+    font-weight: 700;
+}
+
+.main-header .title {
+    margin: 5px 0 0 0;
+    font-size: 1.2em;
+    color: var(--dark-text);
+    letter-spacing: 2px;
+    /* Thêm dòng này để tạo bóng mờ nhẹ cho chữ */
+    text-shadow: 2px 4px 3px rgba(243, 156, 18, 0.7);
+}
+
+/* --- Các Khối Nội Dung Chính (Mục tiêu, Dự án, Kỹ năng) --- */
+.content-section {
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 30px; /* Tạo không gian cho đường timeline và icon */
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    color: var(--dark-text);
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+
+/* --- Icon trên Timeline --- */
+/* Định vị tuyệt đối icon ra bên trái (left: -20px) để nó
+nằm đè lên trên đường timeline dọc. */
+.section-title .icon {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    position: absolute;
+    left: -20px; 
+    border: 3px solid white;
+    z-index: 1; /* Đảm bảo icon nằm trên đường timeline */
+}
+
+/* --- Mục Dự án Nổi bật --- */
+.project-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.project-item:last-child {
+    border-bottom: none; /* Bỏ đường kẻ ở dự án cuối cùng */
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.project-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--dark-text);
+    margin: 0;
+}
+
+.project-date {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.project-description {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}
+
+.project-tasks {
+    padding-left: 20px;
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-tech {
+    font-size: 0.9em;
+}
+
+.project-links a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-left: 15px;
+}
+
+/* --- Thanh Kỹ năng --- */
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    margin-bottom: 15px;
+}
+
+.skill-name {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--dark-text);
+    font-weight: bold;
+}
+
+.skill-bar {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 10px;
+}
+
+.skill-level {
+    background-color: var(--primary-color);
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* CÁC HIỆU ỨNG CSS3 & ANIMATION */
+
+/* --- HIỆU ỨNG 1: Icon Tỏa sáng --- */
+/* Định nghĩa animation "tỏa sáng" bằng cách thay đổi box-shadow */
+@keyframes pulse-effect {
+  0% {
+    box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(243, 156, 18, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(243, 156, 18, 0);
+  }
+}
+
+/* Áp dụng animation vào icon, lặp lại vô hạn */
+.section-title .icon {
+  animation: pulse-effect 2s infinite;
+}
+
+/* --- HIỆU ỨNG 2: Nâng khối Dự án --- */
+.project-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* --- HIỆU ỨNG 3: Thanh tiến trình chạy --- */
+/* Định nghĩa animation chạy từ trái sang phải */
+@keyframes fill-bar {
+  from {
+    transform: scaleX(0); 
+  }
+  to {
+    transform: scaleX(1); 
+  }
+}
+
+/* Áp dụng cho tất cả các thanh tiến trình */
+.skill-level, .language-level, .certificate-level {
+  transform-origin: left; /* Hiệu ứng bắt đầu từ bên trái */
+  animation: fill-bar 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- HIỆU ỨNG 4: Trượt mục Liên hệ --- */
+.contact-section li {
+  transition: transform 0.3s ease;
+}
+
+.contact-section li:hover {
+  transform: translateX(8px);
+}
+
+/* --- HIỆU ỨNG 5: TIÊU ĐỀ TỰ ĐỘNG PHÁT SÁNG --- */
+
+/* 1. Định nghĩa animation "phát sáng" */
+@keyframes glowing-title {
+  0% {
+    text-shadow: 0 0 3px var(--primary-color);
+  }
+  50% {
+    text-shadow: 0 0 15px var(--primary-color);
+  }
+  100% {
+    text-shadow: 0 0 3px var(--primary-color);
+  }
+}
+
+/* 2. Áp dụng animation vào tiêu đề h1 */
+.main-header h1 {
+  /* Gọi animation, chạy trong 3 giây, lặp lại vô hạn */
+  animation: glowing-title 3s ease-in-out infinite;
+}
+.main-header h1:hover {
+  text-shadow: 0 0 8px var(--primary-color);
+}
+
+/* --- HIỆU ỨNG 6: Phóng to ảnh đại diện --- */
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+/* HIỆU ỨNG XUẤT HIỆN KHI TẢI TRANG */
+/* 1. Định nghĩa animation: Di chuyển từ dưới lên và mờ dần sang rõ nét */
+@keyframes slide-up-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Bắt đầu từ vị trí thấp hơn 20px */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Di chuyển về vị trí ban đầu */
+    }
+}
+
+/* 2. Áp dụng animation vào các phần tử mong muốn */
+
+/* Mặc định, các khối này sẽ bị ẩn đi để chờ animation */
+.profile-section,
+.main-header,
+.content-section,
+.left-column > section { /* Áp dụng cho các mục ở cột trái */
+    animation-name: slide-up-fade-in;
+    animation-duration: 0.8s;   /* Thời gian chạy hiệu ứng */
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; /* Giữ lại trạng thái cuối của animation */
+    opacity: 0; /* Bắt đầu với trạng thái trong suốt */
+}
+
+/* 3. Tạo hiệu ứng xuất hiện nối tiếp bằng cách thiết lập độ trễ (delay) khác nhau */
+
+/* Cột trái */
+.profile-section { animation-delay: 0.1s; }
+.left-column .education-section { animation-delay: 0.2s; } /* Thông tin cá nhân */
+.left-column .references-section { animation-delay: 0.3s; } /* Sở thích */
+.left-column .language-section { animation-delay: 0.4s; }
+.left-column .certificate-section { animation-delay: 0.5s; }
+.left-column .contact-section { animation-delay: 0.6s; }
+
+/* Cột phải */
+.main-header { animation-delay: 0.2s; }
+.right-column .content-section:nth-of-type(1) { animation-delay: 0.4s; } /* Mục tiêu nghề nghiệp */
+.right-column .content-section:nth-of-type(2) { animation-delay: 0.6s; } /* Dự án */
+.right-column .content-section:nth-of-type(3) { animation-delay: 0.8s; } /* Kỹ năng */
+
+/* THIẾT KẾ ĐÁP ỨNG (RESPONSIVE) */
+/* Các quy tắc này chỉ áp dụng cho màn hình có chiều rộng tối đa 768px (máy tính bảng, điện thoại) */
+@media (max-width: 768px) {
+    /* Chuyển layout từ 2 cột thành 1 cột */
+    .resume-container {
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    /* Cho cả 2 cột chiếm toàn bộ chiều rộng */
+    .left-column, .right-column {
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Ẩn đường timeline dọc trên di động vì không còn phù hợp */
+    .right-column::before {
+        display: none; 
+    }
+
+    .content-section {
+        padding-left: 0;
+    }
+
+    /* Đưa icon về vị trí bình thường, nằm cùng dòng với tiêu đề */
+    .section-title .icon {
+        position: static;
+        margin-right: 10px;
+        width: 30px;
+        height: 30px;
+    }
+}
