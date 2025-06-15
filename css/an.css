@@ -1,6 +1,8 @@
+/* --- GLOBAL STYLES --- */
 body{
     background-color: #d5d5d5;
     font-family: system-ui;
+    scroll-behavior: smooth; /* Cho phép cuộn mượt khi click vào link neo */
 }
 
 .container{    
@@ -14,8 +16,67 @@ body{
     grid-template-columns: 35% 60%;
     column-gap: 5%;
     row-gap: 30px;
+    position: relative; 
 }
 
+/* --- NAVBAR STYLES --- */
+.main-nav {
+    grid-column: 1 / -1; 
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    opacity: 0; 
+    animation: fadeInSlideDown 0.7s ease-out forwards; 
+    animation-delay: 0s; 
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+.main-nav li {
+    margin: 0 15px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s ease-in-out;
+}
+
+.main-nav a:hover {
+    color: #007bff; 
+}
+
+.main-nav a:hover::after {
+    width: 100%; 
+}
+
+
+/* --- ANIMATION EFFECTS --- */
+/* Keyframes cho hiệu ứng mờ dần và trượt lên (cho hầu hết các phần) */
 @keyframes fadeInSlideUp {
     from {
         opacity: 0;
@@ -27,10 +88,31 @@ body{
     }
 }
 
-.container > div {
+/* Keyframes cho Navbar (trượt xuống) */
+@keyframes fadeInSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+/* Keyframes cho hiệu ứng vẽ đường kẻ */
+@keyframes drawLine {
+    from { height: 0; }
+    to { height: 100%; }
+}
+
+/* Đảm bảo tất cả các phần tử con trực tiếp của .container ban đầu ẩn */
+/* Loại trừ .main-nav vì nó có animation riêng */
+.container > div:not(.main-nav) {
     opacity: 0; 
 }
 
+/* Áp dụng animation cho từng phần tử chính với độ trễ khác nhau */
 .avatar {
     animation: fadeInSlideUp 0.7s ease-out forwards;
     animation-delay: 0.2s; 
@@ -46,14 +128,17 @@ body{
     animation-delay: 0.6s;
 }
 
-.intro {
+/* Đổi từ .intro sang .objective */
+.objective {
     animation: fadeInSlideUp 0.7s ease-out forwards;
     animation-delay: 0.8s;
+    padding-left: 30px; /* Giữ nguyên định dạng */
+    text-align: justify;
 }
 
 .education {
     animation: fadeInSlideUp 0.7s ease-out forwards;
-    animation-delay: 1s;
+    animation-delay: 1.0s;
 }
 
 .exp {
@@ -71,6 +156,42 @@ body{
     animation-delay: 1.6s;
 }
 
+/* Thêm animation cho phần Sở thích */
+.hobbies {
+    animation: fadeInSlideUp 0.7s ease-out forwards;
+    animation-delay: 1.8s;
+    text-align: right; /* Đặt ở cột bên phải */
+}
+
+.hobbies ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: right;
+    line-height: 30px;
+}
+
+.certificate { 
+    animation: fadeInSlideUp 0.7s ease-out forwards;
+    animation-delay: 2.0s; /* Xuất hiện sau các phần khác */
+    padding-left: 30px; 
+    text-align: justify;
+}
+.certificate h4 {
+    margin: 20px 0 10px;
+}
+
+.certificate .no-items {
+    font-style: italic;
+    color: #666;
+    margin-top: 10px;
+    animation: fadeInSlideUp 0.6s ease-out forwards; /* Cho hiệu ứng cho "Không có" */
+    animation-delay: 2.2s; /* Trễ hơn chút so với tiêu đề Certificate */
+    opacity: 0; /* Đảm bảo ẩn ban đầu */
+}
+
+
+/* Áp dụng hiệu ứng cho các mục con trong Experience và Project */
 .exp .item, .project .item {
     opacity: 0; 
     animation: fadeInSlideUp 0.6s ease-out forwards; 
@@ -81,32 +202,35 @@ body{
 
 .project .item:nth-child(1) { animation-delay: 1.8s; } 
 
-@keyframes drawLine {
-    from { height: 0; }
-    to { height: 100%; }
-}
 
-.name, .intro, .exp, .project {
+/* --- LINE DRAWING EFFECTS --- */
+/* Thay thế border-left bằng phần tử giả để tạo hiệu ứng vẽ */
+/* Điều chỉnh cho phù hợp với các phần mới và đã đổi tên */
+.name, .objective, .exp, .project, .certificate { /* Thêm .objective và .certificate */
     border-left: none; 
     position: relative; 
 }
 
-.name::before, .intro::before, .exp::before, .project::before {
+.name::before, .objective::before, .exp::before, .project::before, .certificate::before { 
     content: '';
     position: absolute;
     top: 0;
     left: 0; 
-    width: 1px; 
+    width: 1px;
     height: 0; 
     background-color: #000;
     animation: drawLine 0.5s ease-out forwards; 
 }
 
+/* Điều chỉnh animation-delay cho từng đường kẻ để chúng xuất hiện đồng bộ với nội dung */
 .name::before { animation-delay: 0.5s; } 
-.intro::before { animation-delay: 0.9s; } 
-.exp::before { animation-delay: 1.3s; }
-.project::before { animation-delay: 1.9s; }
+.objective::before { animation-delay: 0.9s; } /* Cho mục tiêu nghề nghiệp */
+.exp::before { animation-delay: 1.3s; } 
+.project::before { animation-delay: 1.9s; } 
+.certificate::before { animation-delay: 2.1s; } /* Cho chứng chỉ */
 
+
+/* --- COMMON STYLES (Các kiểu dáng chung) --- */
 .avatar img{
     width: 200px;
     height: 200px;
@@ -169,11 +293,6 @@ body{
     list-style: none;
     text-align: right;
     line-height: 30px;
-}
-
-.intro{
-    padding-left: 30px;
-    text-align: justify;
 }
 
 h2{
@@ -247,7 +366,7 @@ h2{
 
 .project .item{
     position: relative;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
 }
 
 .project .item::before{
