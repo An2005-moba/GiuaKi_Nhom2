@@ -1,0 +1,178 @@
+/* style.css */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #00897b;
+  color: white;
+}
+
+.img-container {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title-container h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.title-container h2 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.container {
+  display: flex;
+  max-width: 1000px;
+  margin: 30px auto;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sider {
+  background-color: #00897b;
+  color: white;
+  width: 35%;
+  padding: 30px 20px;
+}
+
+.sider-content {
+  margin-bottom: 25px;
+}
+
+.sider-content h1 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
+}
+
+.sider-content ul li {
+  list-style: none;
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.progress-container {
+  margin-bottom: 15px;
+}
+
+.progress-title {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.progress-wrap {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  height: 8px;
+  border-radius: 4px;
+}
+
+.progress {
+  background-color: white;
+  height: 8px;
+  border-radius: 4px;
+}
+
+/* Content */
+.content {
+  padding: 30px 25px;
+  width: 65%;
+}
+
+.tag, .tag-fill {
+  font-size: 18px;
+  color: #00897b;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.text-content {
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.icon-spacing {
+  margin-right: 8px;
+}
+
+.description-content {
+  margin-top: 30px;
+}
+
+.tabbar-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.text-date {
+  font-style: italic;
+}
+
+h3 {
+  font-size: 16px;
+  color: #00897b;
+  margin: 5px 0;
+}
+
+.p1 {
+  font-size: 14px;
+  color: #555;
+}
+
+ul li ul li {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sider,
+  .content {
+    width: 100%;
+  }
+}
