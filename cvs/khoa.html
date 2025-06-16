@@ -1,170 +1,110 @@
-<!-- @format -->
-
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../css/khoa.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-		<!-- Link dẫn các class icon -->
-		<title>My Profile</title>
-	</head>
-	<body>
-    <!-- Phần đầu trang: ảnh đại diện + tiêu đề -->
-    <header>
-        <div class="img-container">
-            <img src="../images/khoa.png" alt="" class="img avatar" />
-        </div>
-        <div class="title-container">
-            <h1>Tôn Thất Khoa</h1>
-            <h2>Sinh viên công nghệ thông tin</h2>
-        </div>
-    </header>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV của Tôn Thất Khoa</title>
+    <link rel="stylesheet" href="../css/khoa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
 
-    <!-- Phần nội dung chính gồm sidebar và nội dung -->
-    <div class="container">
-        <!-- Bên trái: Thông tin cá nhân -->
-        <div class="sider">
-            <!-- Thông tin cá nhân -->
-            <div class="sider-content">
-                <h1 class="tag-fill">Thông tin cá nhân</h1>
-                <div class="tag-content">
-                    <ul>
-                        <li><i class="fas fa-user"></i> Tôn Thất Khoa</li>
-                        <li><i class="fas fa-calendar-alt"></i> 23/10/2004</li>
-                        <li><i class="fas fa-phone"></i> 0901742463</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Phường 3, Quận Gò Vấp</li>
-                    </ul>
-                </div>
+    <div class="cv-container">
+        <div class="left-column">
+            <div class="profile-pic-container">
+                <img src="../images/khoa.png" alt="" class="img avata"/>
+            </div>
+            <p class="school-status">Sinh viên khoa Công nghệ thông tin</p>
+            <h1 class="name">TÔN THẤT KHOA</h1>
+
+            <div class="divider"></div>
+
+            <div class="contact-info">
+                <h3>LIÊN HỆ</h3>
+                <ul>
+                    <li><i class="fas fa-calendar-alt"></i> 23/10/2004</li>
+                    <li><i class="fas fa-envelope"></i> thatkhoa2310@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Phường 3, Quận Gò Vấp</li>
+                    <li><i class="fas fa-phone"></i> 0901742463</li>
+                    <li><i class="fab fa-facebook-f"></i> fb.com/thatkhoa</li>
+                </ul>
             </div>
 
-            <!-- Liên hệ -->
-            <div class="sider-content">
-                <h1 class="tag-fill">Liên hệ</h1>
-                <div class="tag-content">
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> thatkhoa2004@gmail.com</li>
-                        <li><i class="fab fa-facebook-f"></i> fb.com/thatkhoa</li>
-                        <li><i class="fab fa-github"></i> github.com/Khoaisme2310</li>
-                    </ul>
-                </div>
-            </div>
+            <div class="divider"></div>
 
-            <!-- Kỹ năng -->
-            <div class="sider-content">
-                <h1 class="tag-fill">Kỹ năng</h1>
-
-                <!-- Mỗi kỹ năng hiển thị thanh tiến độ -->
-                <div class="tag-content progress-container">
-                    <p class="progress-title">English</p>
-                    <div class="progress-wrap">
-                        <div class="progress" style="width: 65%"></div>
-                    </div>
-                </div>
-
-                <div class="tag-content progress-container">
-                    <p class="progress-title">Node js</p>
-                    <div class="progress-wrap">
-                        <div class="progress" style="width: 35%"></div>
-                    </div>
-                </div>
-
-                <div class="tag-content progress-container">
-                    <p class="progress-title">Kotlin</p>
-                    <div class="progress-wrap">
-                        <div class="progress" style="width: 50%"></div>
-                    </div>
-                </div>
-
-                <div class="tag-content progress-container">
-                    <p class="progress-title">Java </p>
-                    <div class="progress-wrap">
-                        <div class="progress" style="width: 40%"></div>
-                    </div>
-                </div>
-
-                <div class="tag-content progress-container">
-                    <p class="progress-title">C++ </p>
-                    <div class="progress-wrap">
-                        <div class="progress" style="width: 25%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bên phải: Nội dung chi tiết -->
-        <div class="content">
-            <!-- Mục tiêu nghề nghiệp -->
-            <div>
-                <h1 class="tag"><i class="fas fa-bullseye icon-spacing"></i> Mục tiêu nghề nghiệp</h1>
-                <p class="text-content">
-                    Bản thân là sinh viên khoa công nghệ thông tin, tôi mong muốn được làm việc với chính chuyên ngành mình đã chọn, để tôi có thể vận dụng kiến thức của mình vào trong công việc. <br>
-                </p>
-                <p class="text-content">
-                    Tôi sẽ nỗ lực để hoàn thành tốt các nhiệm vụ được giao, góp phần xây dựng sự nghiệp cá nhân, đóng góp cho sự phát triển của công ty.
+            <div class="objective">
+                <h3>MỤC TIÊU NGHỀ NGHIỆP</h3>
+                <p>
+                    - Bản thân là sinh viên khoa công nghệ thông tin, tôi mong muốn được làm việc với chính chuyên ngành mình đã chọn, để tôi có thể vận dụng kiến thức của mình vào trong công việc
+                    <br>-  Tôi sẽ nỗ lực để hoàn thành tốt các nhiệm vụ được giao, góp phần xây dựng sự nghiệp cá nhân, đóng góp cho sự phát triển của công ty.
                 </p>
             </div>
+        </div>
 
-            <!-- Kinh nghiệm làm việc -->
-            <div class="description-content">
-                <h1 class="tag"><i class="fas fa-briefcase icon-spacing"></i>Kinh nghiệm làm việc</h1>
-                <ul>
-                    <!-- Dự án cá nhân -->
-                        <h3>Dự án java</h3>
-                        <ul>
-                            <li>Xây dựng phần mềm quản lý sách dùng Java Swing + SQL Server theo mô hình 3 lớp.</li>
-                            <li>Chức năng: Quản lý sách, người mượn, thống kê sách mượn/trả, tìm kiếm nhanh.</li>
-                            <li>Công nghệ: Java (Swing, JDBC), SQL Server, mô hình 3 lớp.</li>
-                        </ul>
-                        <h3>Dự án công nghệ phần mềm</h3>
-                        <ul>
-                            <li>Phần mềm quản lý và đặt sân cầu lông.</li>
-                            <li>Phần mềm xin việc làm trên Android (sử dụng Java+Kotlin)</li>
-                        </ul>
-
-                        <!-- Công việc Part-time -->
-                        <div class="tabbar-title">
-                            <p class="text-content">Công việc</p>
-                            <p class="text-date">2022 - 2025</p>
-                        </div>
-                        <h3>Freelancer</h3>
-                        <ul>
-                            <li>Nhân viên bán thời gian tại nhà hàng KFC </li>
-                            <li>Có kinh nghiệm làm backend.</li>
-                        </ul>
-                </ul>
+        <div class="right-column">
+            <div class="section">
+                <h2>HỌC VẤN <i class="fas fa-graduation-cap icon-bg"></i></h2>
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">TRƯỜNG ĐẠI HỌC GIAO THÔNG VẬN TÀI TPHCM</span>
+                        <span class="item-date">10/2022 - Nay</span>
+                    </div>
+                    <p class="item-subtitle"><strong>Khoa Công nghệ thông tin - Ngành Mạng máy tính và truyền thông dữ liệu</strong></p>
+                    <p class="item-content">Sinh viên năm 3</p>
+                    <p class="item-content">GPA 2.84</p>
+                </div>
             </div>
 
-            <!-- Học vấn -->
-            <div class="description-content">
-                <h1 class="tag"><i class="fas fa-graduation-cap icon-spacing"></i>Học vấn</h1>
-                <ul>
-                        <div class="tabbar-title">
-                            <p class="text-content">Sinh viên năm 3</p>
-                            <p class="text-date">2022 - 2025</p>
-                        </div>
-                        <h3>Đại học Giao Thông Vận Tải TP.HCM</h3>
-                        <p class="p1">Chuyên ngành công nghệ thông tin.</p>
-                        <p class="p1">GPA: 3.0</p>
-                        <p class="p1">IELTS 5.5</p>
-                </ul>
+            <div class="section">
+                <h2>DỰ ÁN CÁ NHÂN <i class="fas fa-users icon-bg"></i></h2>
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">DỰ ÁN JAVA</span>
+                        <span class="item-date">2023-2025</span>
+                    </div>
+                    <p class="item-content">- Xây dựng phần mềm quản lý sách dùng Java Swing + SQL Server theo mô hình 3 lớp.</p>
+                    <p class="item-content">- Chức năng: Quản lý sách, người mượn, thống kê sách mượn/trả, tìm kiếm nhanh</p>
+                    <p class="item-content">- Công nghệ: Java (Swing, JDBC), SQL Server, mô hình 3 lớp.</p>
+                </div>
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">DỰ ÁN CÔNG NGHỆ PHẦN MỀM</span>
+                        <span class="item-date">2023 - Nay</span>
+                    </div>
+                    <p class="item-content">- Phần mềm quản lý và đặt sân cầu lông.</p>
+                    <p class="item-content">- Phần mềm xin việc làm trên Android (sử dụng Java+Kotlin).</p>
+                    <p class="item-content">- Phần mềm gửi và nhận thư qua email.</p>
+                </div>
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">CÔNG VIỆC PART-TIME</span>
+                        <span class="item-date">11/2022 - hiện tại</span>
+                    </div>
+                    <p class="item-content">- Nhân viên bán thời gian tại nhà hàng KFC</p>
+                </div>
             </div>
 
-            <!-- Sở thích -->
-            <div class="description-content">
-                <h1 class="tag"><i class="fas fa-gamepad icon-spacing"></i>Sở thích </h1>
-                <ul>
-                        <ul>
-                            <li>Đọc sách</li>
-                            <li>Nấu ăn</li>
-                            <li>Xem phim</li>
-                            <li>Du lịch và tham gia các hoạt động ngoài trời</li>
-                        </ul>
-                </ul>
+            <div class="section">
+                <h2>CHỨNG CHỈ <i class="fas fa-graduation-cap icon-bg"></i></h2>
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-content">TIẾNG ANH TOIEC 550 (2024)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>SỞ THÍCH <i class="fas fa-certificate icon-bg"></i></h2>
+                <div class="item">
+                    <div class="item-header">
+                    </div>
+                    <p class="item-content">- Đọc sách </p>
+                    <p class="item-content">- Nấu ăn </p>
+                    <p class="item-content">- Xem phim </p>
+                    <p class="item-content">- Du lịch và các hoạt động ngoài trời </p>
+                </div>
             </div>
         </div>
     </div>
 </body>
-
 </html>
